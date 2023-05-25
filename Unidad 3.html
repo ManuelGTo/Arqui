@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unidad 3</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+          <img src="TecNMSaltillo.png" alt="Imagen generica">
+          <h2 class="nombre-empresa">Arquitecura de Computadoras</h2>
+          <h2 class="nombre-empresa">Unidad 3</h2>
+        </div>
+        <nav>
+            <a href="index.html" class="nav-link">Inicio</a>
+            <a href="Unidad 1.html" class="nav-link">Unidad 1</a>
+            <a href="Unidad 2.html" class="nav-link">Unidad 2</a>
+            <a href="Unidad 3.html" class="nav-link">Unidad 3</a>
+            <a href="Unidad 4.html" class="nav-link">Unidad 4</a>
+            <a href="Practicas.html" class="nav-link">Practicas</a>
+        </nav>
+      </header>
+      <div class="contenedor">
+        <h1>3.1Chipset</h1>
+        <h2>3.1.1 Unidad Central de Procesamiento (CPU)</h2>
+        <p>El microprocesador también se denomina Unidad Central de Proceso o CPU (foto).Se encarga de leer y ejecutarlos programas almacenados en la memoria RAM. Es el componente principio al de un ordenador, su velocidades mide en Gigahercios (Ghz) y esta velocidad se incrementa de manera considerable con cada nueva generación de ordenadores. Para extraer el calor generado durante su funcionamiento necesita un disipador y un ventilador colocados ambos sobre él en la placa base. Existen actualmente ordenadores con dos o incluso más microprocesadores.<br>
+        <br>Su función es interpretar las instrucciones de un programa informático mediante la realización de las operaciones básicas aritméticas, lógicas, y externas (procedentes de la unidad de entrada/salida). Su diseño y su avance han variado notablemente desde su creación, aumentando su eficiencia y potencia y reduciendo el consumo de energía y el coste.</p>
+        <h2>3.1.2 Control de bus</h2>
+<p>El Bus es la vía a través de la que se van a transmitir y recibir todas las comunicaciones, tanto internas como externas, del sistema informático. El bus es solamente un Dispositivo de Transferencia de Información entre los componentes conectados a él, no almacena información alguna en ningún momento. Los datos, en forma de señal eléctrica, sólo permanecen en el bus el tiempo que necesitan en recorrer la distancia entre los dos componentes implicados en la transferencia. En una unidad central de Bus de sistema típica el bus se subdivide en tres buses o grupos de líneas: Bus de Control. Bus de Datos. Direcciones. <br>
+<br>Bus de Direcciones<br>
+<br>Es un canal de comunicaciones constituido por líneas que apuntan a la dirección de memoria que ocupa o va a ocupar la información a tratar. Una vez direccionada la posición, la información, almacenada en la memoria hasta ese momento, pasará a la CPU a través del bus de datos. Para determinar la cantidad de memoria directamente accesible por la CPU, hay que tener en cuenta el número de líneas que integran el bus de direcciones, ya que cuanto mayor sea el número de líneas, mayor será la cantidad de direcciones y, por tanto, de memoria a manejar por el sistema informático. <br>
+<br>Bus de Datos<br>
+<br>El bus de datos es el medio por el que se transmite la instrucción o dato apuntado por el bus de direcciones. Es usado para realizar el intercambio de instrucciones y datos tanto internamente, entre los diferentes componentes del sistema informático, como externamente, entre el sistema informático y los diferentes subsistemas periféricos que se encuentran en el exterior, una de las características principales de una computadora es el número de bits que puede transferir el bus de datos (16, 32, 64, etc.). Cuanto mayor sea este número, mayor será la cantidad de información que se puede manejar al mismo tiempo. <br>
+<br>Bus de Control<br>
+<br>Es un número variable de líneas a través de las que se controlan las unidades complementarías. El número de líneas de control dependerá directamente de la cantidad que pueda soportar el tipo de CPU utilizada y de su capacidad de direccionamiento de información.</p>
+<h2>3.1.3 Puertas de entrada salida E/S</h2>
+<p>En computación, entrada/salida, también abreviado E/S o I/O (del original en inglés input/output), es la colección de interfaces que usan las distintas unidades funcionales (subsistemas) de un sistema de procesamiento de información para comunicarse unas con otras, o las señales (información) enviadas a través de esas interfaces.  <br>
+<br>Es importante notar que la designación de un dispositivo, sea de entrada o de salida, cambia al cambiar la perspectiva desde el que se lo ve. Los teclados y ratones toman como entrada el movimiento físico que el usuario produce como salida y lo convierten a una señal eléctrica que la computadora pueda entender. <br>
+<br>En arquitectura de computadoras, a la combinación de una unidad central de procesamiento (CPU) y memoria principal (aquélla que la CPU puede escribir o leer directamente mediante instrucciones individuales) se la considera el corazón de la computadora y cualquier movimiento de información desde o hacia ese conjunto se lo considera entrada/salida. <br>
+<br>La CPU y su circuitería complementaria proveen métodos de entrada/salida que se usan en programación de bajo nivel para la implementación de controladores de dispositivos. Los sistemas operativos y lenguajes de programación de más alto nivel brindan conceptos y primitivas de entrada/salida distintos y más abstractos.</p>
+<h2>3.1.4 Controlador de interacciones</h2>
+<p>Este circuito integrado controla las interrupciones del sistema. Como el microprocesador sólo posee dos entradas de interrupción, y puede controlar muchas más, es necesario algún integrado que no permita ello. Aunque ya no es un chip separado, la interfaz 8259A sigue siendo proporcionada por el Platform Controller Hub o el chipset Southbridge en las placas base x86 modernas. <br>
+
+<br>Supongamos que no queda ninguna interrupción pendiente y el CPU está trabajando en el
+Programa principal. <br>
+<br>1.-Al activarse una línea de interrupción, el 8259 verifica que no haya otra interrupción pendiente, y si no la hay, envía una señal a través del pin INTR hacia el pin INTR del CPU<br>
+<br>2. adicionalmente, envía a través del bus de datos, el número de interrupción que se ha activado, de tal manera que el CPU ya sabe qué servicio de interrupción va a usar. <br>
+<br>3. Una vez que recibió el CPU este valor, activa su pin INTA, indicando que ya recibió y está ejecutando el servicio<br>
+<br>4. Una vez que el CPU termina, el pin INTA se desactiva, indicando al 8259 que está listo para procesar otras interrupciones. <br>
+<br>- IRR/ISR: Registro de peticiones de interrupción/Registro de servicio de interrupción. Al activarse una o varias entradas IR quedan reflejadas en los bits correspondientes de IRR. Se usa para decidir a qué interrupción atender. <br>
+<br>- IMR: Registro de máscaras de interrupción. Se delega la responsabilidad en el programador para enmascarar algunas interrupciones que ayuden al controlador a ignorar dichas interrupciones, aquí cada bit corresponde a una línea IRQ, e indica si está permitida una interrupción de ese nivel en ese momento.</p>
+<h2>3.1.5 Controlador de acceso directo a memoria</h2>
+<p>Puesto que la mayoría de los datos que maneja el ordenador están antes o después en la memoria RAM, los intercambios entre esta y el resto de elementos son muy frecuentes. En general este intercambio es conducido por el procesador, pero si se consigue que en determinados casos, la memoria pueda intercambiar datos con otro periférico sin intervención del procesador (por ejemplo un disco o una tarjeta de sonido), se conseguirá un incremento sustancial en el rendimiento del sistema, porque el procesador quedará libre para otras tareas. El acceso directo a memoria se inventó con el propósito de liberar al CPU de la carga de atender a algunos controladores de dispositivos. Incrementa la velocidad de acceso a los dispositivos y envía información en menos tiempo. <br>
+<br>El Acceso Directo a Memoria (DMA) es un método rápido para transferir datos de forma directa de un dispositivo periférico a la memoria del sistema por medio de circuitería especializada o un microprocesador exclusivo, sin pasar por el procesador central, Controlador de dispositivo o adaptador. Es la parte electrónica de los periféricos, la cual puede tener la forma de una tarjeta o un circuito integrado a la tarjeta madre de la computadora. El ADM o DMA es la técnica de transferencia de información/datos que desconecta al proceso durante tal transferencia y deja que el dispositivo periférico maneje la transferencia directamente a la memoria, mejorando la velocidad de la transferencia y haciendo el sistema más eficiente.</p>
+<h2>3.1.6 Circuitos de Temporización</h2>
+<p>¿QUE ES UN TEMPORIZADOR? <br>
+<br>Un temporizador básicamente consiste en un elemento que se activa o desactiva después de un tiempo preestablecido. <br>
+<br>Se encuentra en la placa base de la PC y que es capaz de mantener una cuenta de tiempo basada en el reloj de la computadora. Puede usarse para calcular el intervalo entre dos mediciones de tiempo o para generar pausas. Este chip tiene la capacidad de realizar diferentes funciones de conteo. Es útil para medir el tiempo que dura cierto proceso o para mantener actualizadas la hora del día y la fecha si se deja la PC conectada y encendida. <br>
+<br>¿COMO FUNCIONA EL CIRCUITO? <br>
+<br>El circuito de temporización se encarga de generar los pulsos de reloj necesarios para sincronizar las operaciones que se llevan a cabo en la computadora. La frecuencia de esta señal determina la velocidad a la que se pueden realizar las operaciones en el computador. <br>
+<br>El circuito de temporización utiliza un cristal de cuarzo para generar una señal de reloj estable y preciso. El cristal de cuarzo vibra a una frecuencia constante cuando se somete a una corriente eléctrica, lo que permite al circuito de temporización generar una señal de reloj precisa y estable.
+Además de generar la señal de reloj, el circuito de temporización también se encarga de distribuir esta señal a través de la computadora. Esto se hace mediante un conjunto de líneas de reloj que se extienden a través de la placa base y que conectan los distintos componentes de la computadora.</p>
+<h2>3.1.7 Circuitos de control</h2>
+<p>El Circuito de Control es la encargada de la administración de todos los recursos del computador. Esta unidad se encarga del traslado de los datos y las instrucciones entre las partes que los requieran; interpreta los comandos y produce las órdenes para efectuar cada una de las tareas.
+Vigila las secuencias y sincroniza la operación de cada una de las partes que intervienen en la ejecución de un programa. Podemos apreciar la organización de una Unidad de Control representativa; allí vemos que los traslados se hacen a través del bus de datos y el bus de direcciones.
+La Unidad de Control posee su propia memoria para almacenamiento de datos, instrucciones, direcciones, programas, y en general toda información que deba ser administrada por la UC.</p>
+<h1>3.2 Aplicaciones</h1>
+<h2>3.2.1 Entrada/Salida</h2>
+<p>El teclado es un periférico o dispositivo de ingreso o entrada (input) de información. Consiste en un conjunto de teclas o botones dispuestos de manera horizontal sobre una lámina, donde actúan como palancas mecánicas o interruptores electrónicos, permitiendo así el ingreso de información codificada al sistema informático por parte del usuario. <br>
+<br>Los teclados operan mediante el funcionamiento de un micro controlador, dotado de software propio, capaz de realizar exploraciones de matrices cada vez que presionamos una tecla y así saber cuál ha sido, y a qué carácter o función se corresponde. <br>
+<br>Los ratones usan únicamente sensores de dos tipos: láser y óptico. <br>
+<br>Sensores ópticos utilizan un led generalmente de color rojo para iluminar la zona sobre la que tienen que registrar el movimiento. <br>
+<br>Los sensores láser, que también son sensores ópticos, utilizan una iluminación láser infrarroja para detectar por dónde se mueve el ratón. <br>
+<br>Los sensores son de tipo CMOS, como los de las cámaras de foto. <br>
+<br>Queda reflejado por la característica de píxeles por pulgada del sensor —PPP, en inglés DPI counts per inch o conteo por pulgada. <br>
+<br>Aumentar los PPP de un ratón significa que al moverlo una pulgada podrá recorrer mucha más distancia. <br>
+<br>si la conversión fuera 1:1. Un ratón con un sensor de 2000 PPP es suficiente para recorrer una pantalla de 1920 x 1080 píxeles de lado a lado.
+<br>la calidad depende de la implementación específica que haga el fabricante en su ratón. La analogía en este caso es las cámaras de un teléfono, en la que dos pueden usar el mismo sensor de alta calidad, pero una usa filtros de color de distinto tipo y firmware. <br>
+Muestreo (polling) es la velocidad a la que se toman muestras de la ubicación del ratón, expresada en frecuencia (hercios). Puesto que la frecuencia es la inversa del tiempo que lleva a algo repetirse (periodo), un muestreo de 1000 Hz se traduce en que se toman muestras cada 1 ms.
+<br>El monitor o pantalla es un dispositivo de salida que nos permite visualizar mediante una interfaz tanto la información introducida por el usuario como la devuelta tras ser procesada por el ordenador. <br>
+<br>Las pantallas muestran las imágenes a través de pixeles, que son las unidades básicas de una imagen. La resolución de los monitores depende de la cantidad de píxeles que estos tengan. <br>
+<br><center>Tipos de resoluciones</center><br>
+<br>•Resolución SD: De 640×480 píxeles. Es el estándar de resolución más bajo que existe. <br>
+<br>•Resolución QHD: De 960×540 píxeles. Es un cuarto de alta definición, se emplea en dispositivos de baja gama. <br>
+<br>•Resolución HD: De 1280×720 píxeles. Se corresponde con el primer estándar de alta resolución, conocido también como 720p. <br>
+<br>•Resolución FHD: De 1920×1080 píxeles. Es el estándar de alta definición total. El full HD resolución es una de los más utilizados hoy en día. <br>
+<br>•Resolución QHD: De 2560×1440 píxeles. Resolución es muy utilizada en algunos smartphones<br>
+<br>•Resolución UHD: De 3840×2160 píxeles. Esta resolución se está convirtiendo en el estándar de los últimos televisores de gama media y alta. <br>
+<br>•Resolución UHD 8k: De 7680×4320. Este estándar aspira a ser el sucesor de la resolución 4k<br>
+<br><center>Una pantalla OLED</center><br>
+<br>Los monitores OLED ofrecen una precisión de color sin igual y una mayor variedad de ángulos de visión utilizables, en comparación con otros tipos de pantallas. Requieren una gran cantidad de energía e irradian una buena cantidad de calor durante su uso. En otras palabras, tener múltiples pantallas OLED funcionando constantemente aumentará significativamente tu factura de energía e irradian una buena cantidad de calor durante el uso. También tienden a ser caros. <br>
+<br><center>Monitores LCD</center><br>
+<br>Una pantalla de cristal líquido (LCD) es un diseño de panel plano que utiliza cristales líquidos que modulan la luz para crear una calidad de imagen impresionante. <br>
+<br>Tienen una huella relativamente pequeña, tanto en su tamaño total como en lo que respecta al consumo de energía. Los monitores LCD también han disminuido significativamente su precio a lo largo de los años, ofreciendo imágenes magníficas a precio más barato que el de sus primos OLED. Sin embargo, los monitores LCD pueden tener algunos problemas de calidad, ya que los píxeles atascados y otras dolencias son relativamente comunes. <br>
+<br><center>Pantallas CRT</center><br>
+<br>Los monitores CRT están hechos con tubos de rayos catódicos y son el tipo más antiguo de pantalla de PC, utilizando una tecnología similar a la que tenían las primeras televisiones. Este tipo de monitores han pasado de moda en los últimos años, debido a que son extremadamente pesados y más grandes que las pantallas OLED o LCD. <br>
+<br>También emiten una cantidad bastante grande de radiación, lo que puede ser un problema de salud. En el lado positivo, las pantallas CRT son una forma fantástica de jugar videojuegos retro, ya que estos juegos se diseñaron teniendo en cuenta los monitores CRT. <br>
+<br>Por todo ello, este tipo de monitores han pasado de moda en los últimos años debido a que son extremadamente pesados y más grandes que las pantallas OLED o LCD. <br>
+<br><center>Monitores LED</center><br>
+<br>LED significa 'diodo emisor de luz' en inglés. Los monitores LED, a veces llamados monitores retro iluminados por LED, tienen una gran calidad de color e imagen, pero no tienen un buen tiempo de respuesta. <br>
+<br>Esto los hace buenos para tareas que requieren movimientos precisos, como jugar o renderizar. <br>
+<br>Hoy en día, los monitores LED son muy famosos en el mercado porque hay muchos beneficios de usar monitores LED, como que tienen un rango de atenuación más amplio, son más fiables, menos costosos, consumen menos energía (20 vatios) y tienen una relación de contraste más dinámica. <br>
+<br><center>Monitores curvos</center><br>
+<br>Los monitores curvos son lo último en tecnología de monitores, pero pueden ser caros. Se están volviendo cada vez más populares entre los usuarios de juegos, los editores de video y los programadores. De hecho, hoy en día la mayoría de los trabajadores profesionales utilizan monitores curvos.</p>
+<h2>3.2.2 Almacenamiento</h2>
+<p><center>SDD</center> <br>
+<br><center>¿Qué es un disco de estado sólido?</center><br>
+<br>Las unidades de estado sólido o SSD por sus siglas en inglés, pueden prolongar el ciclo de vida y mejorar en gran medida el rendimiento de las PC, al brindar mayor velocidad y estabilidad para su equipo de cómputo. <br>
+<br>Un disco de estado sólido utiliza memoria de semiconductores de estado sólido para almacenar la información, esta tecnología es la misma que utilizan los dispositivos de almacenamiento USB y las tarjetas SD que utilizamos para guardar la información de las cámaras digitales. <br>
+<br>Los discos duros comunes que se utilizan actualmente para el almacenamiento de información en los equipos de cómputo, están compuestos de varios platos y que hacen uso de campos magnéticos. Estos discos giran a gran velocidad. Para tener acceso a los datos lo que hacen es utilizar varias cabezas en forma de aguja que leen y escriben sobre los platos. <br>
+<br><center>RENDIMIENTO</center><br>
+<br>Para comprender mejor el rendimiento de un disco SSD te damos algunos ejemplos: el sistema de tu equipo de cómputo arranca en 11 segundos, MS Word inicia en solamente 1.48 segundos, esto es hasta 2.5X más rápido que un HDD. Si se trata de revisar nuestro correo electrónico, notamos una eficiencia de hasta 5X veces más rapidez y detectar un virus en nuestro equipo lo logramos en tan solo la mitad de tiempo que con un HDD. <br>
+<br><center>Consumo de energía</center><br>
+<br>Estos dispositivos reducen la potencia necesaria para su funcionamiento, son ideales para mejorar el rendimiento en equipos portátiles. Al no contar con partes móviles, no requieren de una ventilación lo que es reflejado en el ahorro energético. <br>
+<br><center>TIPOS de SSD</center><br>
+<br>SSDs M.2 NVMe PCIe para la máxima velocidad. <br>
+<br>El NVMe es una nueva especificación para dispositivos que utilizan la tecnología de los SSDs, actualmente podemos encontrarla en nuestros ordenadores principalmente en sus interfaces M2. Esta combinación ofrece conexiones de muy alta velocidad a través de PCIe permitiendo a los SSDs utilizar hasta 4 líneas de transmisión y llegar a velocidades de hasta 4 GB/s en interfaces PCIe 3.0, 8 GB/s en las 4.0 y 16 GB/s en las 5.0. Aunque la velocidad final dependerá de la calidad del SSD y de las características del ordenador donde lo instalemos. <br>
+<br>Los SSD SATA, la opción más tradicional, barata y “lenta”. <br>
+<br>Estos discos de estado sólido fueron los primeros en popularizarse, usando la interfaz SATA de almacenamiento y apareciendo en un formato de 2,5 pulgadas, igual que los discos duros diseñados para portátiles. Esto hace que sean compatibles con cualquier dispositivo tradicional y vengan perfectos si queremos darle una segunda vida a un portátil antiguo o un ordenador algo más desfasado. La única pega es que están limitados por la interfaz SATA, llegando "solo" a tasas de transferencia de hasta 600 MB/s. <br>
+<br>CONCEPTO: <br>
+<br>Disco Duro o HDD (Hard Drive Disk). <br>
+<br>Son un componente informático que sirve para almacenar de forma permanente tus datos. Esto quiere decir, que los datos no se borran cuando se apaga la unidad como pasa en los almacenados por la memoria RAM. Tiene grandes capacidades de almacenamiento, como por ejemplo 500TB e incluso mayores. <br>
+<br>Están compuestos de piezas mecánicas, de ahí que a veces se le llame discos duros mecánicos, y utilizan el magnetismo para grabar tus datos y archivos. <br>
+<br>ELEMENTOS: <br>
+<br>La velocidad de rotación, incide directamente en el tiempo de acceso a los datos. Entre más velocidad más rápido accedes a los datos. <br>
+<br>En cuanto al tamaño, las cajas de los discos duros mecánicos pueden ser de 2,5" o de 3,5". Su precio puede variar dependiendo de este tamaño, pero sobre todo de su capacidad de almacenamiento. De hecho, la gran ventaja de estos discos duros con respecto a los SSD es que son bastante más económicos. <br>
+<br><center>¿CUAL DISCO DURO ELEGIR?</center><br>
+<br>Si sueles descargar muchos contenidos de Internet y necesitas grandes cantidades de almacenamiento, o si cuentas con un presupuesto bajo, lo recomendado es que sigas recurriendo a los HDD. También son un buen recurso para los discos duros externos, donde suele primar la capacidad de almacenamiento por encima de la velocidad. <br>
+<br>En cambio los SSD son recomendables si quieres tener un ordenador mucho más rápido. <br>
+<br>De hecho, su velocidad puede hacer que un PC con algunos años vaya mucho más rápido sin tener que invertir en otros componentes. <br>
+<br>En la mayoría de los casos sin embargo lo recomendable es combinar ambos tipos de disco duro.</p>
+<h2>3.2.3 Fuentes de alimentación</h2>
+<p><center>AT</center> <br>
+<br>Es la fuente de alimentación que usaban las computadoras más viejas; su propósito es exactamente igual a las fuentes actuales, la cual es brindar un suministro de energía a los componentes internos de la PC. <br>
+<br>El significado de AT<br>
+<br>Recibe el nombre de AT debido a sus siglas en inglés; las cuales significan Advanced Technology, o lo que en español se traduce como Tecnología Avanzada. <br>
+<br>Se utilizan para suministrar la energía eléctrica necesaria para el correcto funcionamiento de los dispositivos internos del ordenador, encontrándose en antiguos gabinetes horizontales y gabinetes mini torre. <br>
+<br><center>¿CUÁLES SON LAS PARTES DE LA FUENTE AT?</center><br>
+<br>1.- Ventilador: expulsa el calor del interior de la fuente para mantener ventilados los circuitos. <br>
+<br>2.- Conector de alimentación: recibe el cable de corriente. <br>
+<br>3.- Selector de voltaje: permite seleccionar el voltaje de 115 V o 240 V. <br>
+<br>4.- Conector de suministro opcional: permite suministrar eléctricamente a ciertos modelos de monitores CRT. <br>
+<br>5.- Conector AT: suministra de electricidad a la motherboard. <br>
+<br>6.- Conector de 4 terminales MOLEX: utilizado para suministrar los discos duros tipo IDE, unidades ópticas IDE y disqueteras 5.25".<br>
+<br>7.- Conector de 4 terminales para BERG: suministra las disqueteras 3.5".<br>
+<br>8.- Interruptor mecánico: permite encender y apagar la fuente AT. <br>
+<br><center>Características de la fuente de poder AT</center><br>
+<br>Su encendido es mecánico<br>
+<br>Algunos de estos dispositivos poseen<br>
+<br>Tienen una función ahorradora<br>
+<br>Era muy segura <br>
+<br>Se adaptan a máquinas antiguas<br>
+<br><center>ATX</center><br>
+<br>ATX son las siglas de ("Advanced Technology eXtended") o tecnología avanzada extendida, se encarga básicamente de transformar la corriente alterna de la línea eléctrica comercial en corriente directa. Otras funciones son las de suministrar la cantidad de corriente y voltaje que los dispositivos requieren así como protegerlos de problemas en el suministro eléctrico como subidas de voltaje. <br>
+<br>ATX es el estándar actual de fuentes que sustituyeron a las fuentes de alimentación AT. <br>
+<br><center>CARACTERÍSTICAS GENERALES</center><br>
+<br>- Es de encendido digital, es decir, tiene un pulsador que al activarse regresa a su estado inicial, sin embargo ya generó la función deseada de encender o apagar. <br>
+<br>- Algunos modelos integran un interruptor trasero para evitar consumo innecesario de energía eléctrico durante el estado de reposo "Stand By",<br>
+<br>- Este tipo de fuentes se integran desde los equipos con microprocesador Intel® Pentium MMX hasta los equipos con los más modernos microprocesadores. <br>
+<br>- Es una fuente que se queda en "Stand By" o en estado de espera, por lo que consumen electricidad aun cuando el equipo este "apagado", lo que también le da la capacidad de ser manipulada con software. <br>
+<br><center>PARTES QUE LA COMPONEN</center><br>
+<br>1.- Ventilador: expulsa el aire caliente del interior de la fuente y del gabinete, para mantener frescos los circuitos. <br>
+<br>2.- Interruptor de seguridad: permite encender la fuente de manera mecánica<br>
+<br>3.- Conector de alimentación: recibe el cable de corriente desde el enchufe doméstico. <br>
+<br>4.- Selector de voltaje: permite seleccionar el voltaje americano de 127V o el europeo de 240V. <br>
+<br>5.- Conector SATA: utilizado para alimentar los discos duros y las unidades ópticas tipos SATA. <br>
+<br>6.- Conector de 4 terminales: utilizado para alimentar de manera directa al microprocesador. <br>
+<br>7.- Conector ATX: alimenta de electricidad a la tarjeta principal. <br>
+<br>8.- Conector de 4 terminales IDE: utilizado para alimentar los discos duros y las unidades ópticas. <br>
+<br>9.- Conector de 4 terminales FD: alimenta las disqueteras. <br>
+<br><center>CÓMO ELEGIR UNA FUENTE DE ALIMENTACIÓN</center><br>
+<br><center>Factor de forma</center><br>
+<br>Al igual que sucede con las placas bases, las cajas para ordenador o muchos otros componentes, el factor de forma es una de las características básicas para poder instalar la fuente de alimentación en la caja de tu ordenador. El formato más común en las fuentes de alimentación actuales es el formato ATX que tiene un tamaño de 140 x 150 x 85 mm. <br>
+<br>Calidad mejor que cantidad<br>
+<br>Mientras que en un equipo para ofimática puede ser suficiente con una fuente de 400 vatios de una buena calidad, un equipo multimedia necesitará unos 500 o 600 vatios, una estación de trabajo unos 750 vatios y un ordenador para juegos desde 850 vatios hasta 1200 vatios o más dependiendo de su configuración. <br>
+<br>La potencia en el lugar adecuado<br>
+<br>La potencia de una fuente de alimentación se distribuye en varios railes de diferentes voltajes. Emplea voltajes que pueden ser de 3,3, 5 o 12 voltios. Hoy en día, más del 90% de la carga de los ordenadores se sitúa en los 12 V. <br>
+<br>Sistemas de protección de voltaje<br>
+<br>Además de contar con un sistema de conversión eléctrica eficiente, algunas fuentes de alimentación incluyen una serie de filtros que absorben y minimizan las fluctuaciones del flujo eléctrico y protegen a los componentes de tu PC. <br>
+<br><center>Sistemas de refrigeración</center><br>
+<br>Como cualquier otro sistema electrónico, las fuentes de alimentación necesitan una cierta refrigeración para evitar el sobrecalentamiento de sus componentes. <br>
+<br>Algunas fuentes cuentan con sistemas de refrigeración pasivos (Fanless) basados en grandes radiadores de aluminio desde los que se enfrían los componentes internos de la fuente.</p>
+<h1>3.3 Ambientes de servicio</h1>
+<p><center>PRODUCTIVIDAD</center> <br>
+<br>Provee ciclos de vida útil extensos y estables, una imagen común y recursos de manejabilidad que permiten a los usuarios planear, implementar, administrar y realizar la transición de computadoras en ambientes conectados en red y maximizar la productividad haciendo con que los usuarios se concentren en sus objetivos empresariales y no en la administración de computadoras. <br>
+<br><center>MEJOR VALOR DE CICLO DE VIDA ÚTIL</center><br>
+<br>Permite que los clientes normalicen una plataforma determinada para controlar los costos de soporte y ayuda a maximizar las inversiones a largo plazo. <br>
+<br><center>CONFIGURACIÓN FLEXIBLE</center><br>
+<br>La flexibilidad integrada ayuda a que la computadora se ajuste fácilmente a su presupuesto, seleccionando exactamente la combinación correcta de recursos que satisfacen sus necesidades. La opción de dos factores de forma facilita el mantenimiento y se adapta a cualquier ambiente empresarial</p>
+<h2>3.3.1 Negocios</h2>
+<p><center>TIPOS DE COMUNICACIÓN</center> <br>
+<br>La comunicación es la clave para el éxito de cualquier negocio. A menos que los potenciales clientes y consumidores sepan que existe su negocio, no contarán con la información necesaria para contactarse con usted o comprar sus productos. Si saben de la existencia de su negocio, deben poder contactarse con usted fácilmente. <br>
+<br>Existen dos tipos esenciales de comunicación: externa e interna<br>
+<br>La comunicación externa busca al consumidor para informarle de la existencia de su producto o servicio y para explicarle por qué debe comprar. Este tipo de comunicación incluye catálogos, diversas formas de publicidad, cartas publicitarias, llamadas telefónicas, sitios Web y cualquier otro esfuerzo para informar a los consumidores sobre su existencia. <br>
+<br>La comunicación interna es esencial para atraer y retener al personal talentoso. <br>
+<br>Usted debe dirigir su empresa mediante la comunicación coherente de este mensaje; debe motivar a su personal valiéndose de distintas formas de comunicación, entre las que se cuentan premios, boletines informativos, reuniones, llamadas telefónicas y sesiones formales e informales de e informales de análisis<br>
+<br><center>HERRAMIENTAS BÁSICAS DE COMUNICACIÓN PC DE ESCRITORIO:</center><br>
+<br>Éste es el tipo más común de computadora, es decir, el que se instala para funcionar en su oficina. Esta computadora incluye una unidad central de procesamiento, un monitor, un módem, una unidad de CD-ROM, una unidad de disquete y una impresora. También se debe considerar algún tipo de almacenamiento de copias de seguridad, como es el caso de una unidad Zip o un lector/quemador de CD. <br>
+<br>La oferta de precios de sistemas computacionales es muy amplia. Por lo tanto, el único consejo que puede resultar conveniente es adquirir el modelo mejor y más rápido que pueda costear. <br>
+<br>Debido a la velocidad con la que avanza la tecnología, cualquier modelo va a quedar obsoleto. <br>
+<br><center>PC PORTÁTIL:</center><br>
+<br>Ésta es una computadora portátil. Se trata de una sola unidad que contiene una combinación de las características que ofrece una computadora de escritorio. Las PC portátiles tienden a ser un poco más costosas que las computadoras de escritorio, sin embargo, si usted viaja con frecuencia y requiere de una computadora, vale la pena hacer esta inversión. Una vez más, es recomendable adquirir el mejor modelo que pueda pagar. <br>
+<br>center>SOFTWARE: </center><br>
+<br> El software que usted adquiera será clave para hacer de su computadora un asistente de productividad. El sistema operativo, ya sea PC o Macintosh, deberá cargarse en el sistema. Muchos paquetes de software se instalan en el sistema al momento de la compra del equipo. <br> <br>Como mínimo, se debe disponer de lo necesario para procesar textos, hojas de cálculo y presentaciones. <br>
+<br>Por otra parte, debe considerar un software de finanzas y contabilidad que se ajuste a su negocio específico. <br>
+<br><center>PRODUCTOS AUXILIARES</center>
+<br>Son muchos los productos que pueden usarse en forma conjunta con su computadora para potenciar la funcionalidad e imagen de su negocio. Estos productos también requieren de un software especialmente diseñado para facilitar su uso. <br>
+<br>- Cámara digital: una fotografía tomada con este tipo de cámara puede cargarse directamente a su computadora y ser útil. Entre los usos de la cámara digital están fotografías de bienes raíces, catálogos de productos, etc. <br>
+<br>- Escáner: si tiene una copia impresa de algún documento y desea incluirlo como parte de un documento, puede crear una imagen digital al escanear la copia impresa con este equipo. <br>
+<br>- Transmisión inalámbrica: le permite comunicarse con otros aparatos equipados con la misma característica. El hecho de sólo apuntar el aparato hacia otro, sin necesidad de perder tiempo buscando el cable y los conectores, resulta muy atractivo y tiene muchos resultados productivos. <br>
+<br><center>INTERNET</center><br>
+<br>Se ha convertido en una importante herramienta de negocios. Puede utilizarse a nivel básico, para enviar y recibir correos electrónicos y para investigar, y a un nivel más amplio, puede utilizarse como canal de venta de productos y servicios. <br>
+<br>Para tener acceso a Internet, necesita un explorador. <br>
+<br>El explorador es un software. Uno de los principales exploradores del mercado es Microsoft Internet Explore. Una vez que disponga de su explorador, debe tener acceso a Internet. <br>
+<br>Esto debe hacerlo a través de un Proveedor de servicios de Internet (ISP). Estos proveedores se diferencian por los tipos de servicio que ofrecen, sin embargo, todos incluyen correo electrónico. Si desea contar con un conjunto amplio de características, debe optar por América Online o MSN. Si ya tiene más experiencia en el acceso a Internet y el trabajo en un entorno que supone un mayor conocimiento de su parte. Usted es quien decide cómo utilizar Internet en su empresa. Tal vez aún no esté listo para comercializar sus productos en Internet, pero sí puede estar interesado en desarrollar un sitio Web o una página principal que informe al público lo que usted hace. Por otra parte, puede utilizar Internet como su principal canal de ventas. Simplemente recuerde, la estructura base ya existe, necesita productos y servicios que la gente requiera; debe atraer al público a su sitio Web para darle la posibilidad de adquirir estos productos y servicios en su empresa; debe convencer a los consumidores de comprar sus productos; necesita un lugar donde almacenar sus productos; y debe tener una forma para hacerlos llegar al cliente. </p>
+<h2>3.3.2 Industria</h2>
+<p><center>Planificación Tecnológica</center> <br>
+<br>La planificación tecnológica es un proceso que requiere tiempo y recursos para entender lo que es apropiado para el personal y la organización. La tecnología en general ha sido la causa principal y la acción más directa para la transformación del trabajo de las organizaciones en la posguerra del siglo XX. Tanto los bienes de capital duros (computadores, teléfonos, videos, etc.), como los programas y sistemas de información y comunicación en general, han incrementado enormemente la productividad y eficiencia de las organizaciones. Tenemos como ejemplos: bases de datos en redes de todo orden y topología, sistemas de reservaciones en aerolíneas, sistemas de contabilidad y nóminas, etc. Esta inversión en recursos humanos y materiales que han efectuado las organizaciones en la segunda mitad del siglo XX, ofrece muchas soluciones y a la vez problemas de toda índole. Por ejemplo, en el área de investigación espacial, existen programas de simulación para misiones espaciales, en los cuales se valoran miles de variables antes de realizar físicamente el viaje. <br>
+<br>Asimismo, en áreas más convencionales como mercadotecnia, es posible analizar una multiplicidad de variables por programación lineal u otras herramientas analíticas en la etapa de diseño, con anterioridad al lanzamiento de un producto o anterioridad al lanzamiento de un producto o servicio. <br>
+<br><center>Primera Generación Período introductorio, o Primera Generación (1940-1955).</center><br>
+<br>Durante el primer periodo se llevaban a cabo acciones de teneduría de libros, en forma manual, rutinaria, con archivos departamentales separados; es por esto que ocurrían frecuentemente errores de coordinación o duplicaciones e incongruencias. En el equipo se distinguían los tubos al vacío y se usaban dígitos binarios de orden 0,1 en aplicaciones, de tal forma que las maquinas eran de tipo electromagnético y usaban tarjetas perforadas pero, para finales de 1950 la computadora digital había ocasionado cambios importantes en el procesamiento de datos, como por ejemplo la reducción en los volúmenes de papeleo. <br>
+<br>Después de 1950 los transistores reemplazaron a los tubos al vacío, con lo que se popularizo su uso por cuanto los aparatos resultaron ser más rápidos, compactos y baratos<br>
+<br><center>Segunda generación</center><br>
+<br>En la segunda etapa, o período de multiplicación, hubo un crecimiento del número de usuarios, pero aún no había una verdadera centralización o integración de cada sistema, ya fuera por desconocimiento, falta de estándares, o bien, inestabilidades propias de la transición. <br>
+<br><center>Tercera generación</center><br>
+<br>La familia de IBM sistema - 860 marca el inicio de la tercera era, o período de sofisticación IBM creó una serie de ordenadores de pequeños a grandes y de alto a bajo rendimiento, con alta y baja potencia todos ellos usando el mismo conjunto de comandos (con dos excepciones para los mercados específicos). Esto permitía a los clientes usar modelos más baratos y después ampliarlos a sistemas más potentes conforme se incrementaban sus necesidades sin pasar por el gasto excesivo de reescribir su Para entonces, ya se podía realizar todo tipo de procesamiento básico de datos, con un equipo en que se incorporaron los circuitos integrados y las llamadas «pastillas» (chips). <br>
+<br><center>Cuarta generación O Era de la Información y del planeamiento estratégico</center><br>
+<br>Comprende una utilización plena del recurso tecnológico, la cual se basa en la computación a todo nivel, a lo que podemos denominar estandarización y globalización de la «inteligencia informática».</p>
+<h2>3.3.3 Comercio electrónico</h2>
+<p><center>TIPOS DE TRANSACCIONES DE COMERCIO ELECTRÓNICO</center>
+<br> •Business to business” (entre empresas)… <br>
+<br> •Business to consumers” (Entre empresa y consumidor)… <br>
+<br> •Consumers to consumers” (Entre consumidor y consumidor)… <br>
+<br> •Consumers to administrations” (Entre consumidor y administración administración): Los n)… <br>
+<br> •Business to administrations” (Entre empresa y administración)… <br>
+<center>VENTAJAS DEL COMERCIO ELECTRÓNICO</center><br>
+<br> Para las empresas: <br>
+<br> -Desaparecen los límites geográficos y de tiempo. <br>
+<br> -Disponibilidad las 24 horas del día, 7 días a la semana, todo el año. <br>
+<br> -Reducción considerable de inventarios. <br>
+<br> -Agilizar las operaciones del negocio. <br>
+<br> -Menos inversión en la Menos inversión en los presupuestos publicitarios. Presupuestos publicitarios. <br>
+<br> -Reducción de precios por el bajo coste del uso de Internet en comparación con otros medios de promoción, lo cual implica mayor competitividad. <br>
+<br> -Globalización y acceso a mercados potenciales de millones de clientes. <br>
+<br> -Para los clientes: <br>
+<br> Un medio que da poder al consumidor de elegir en un mercado global acorde mercado global acorde a sus necesidades. <br>
+<br> -Rapidez al realizar los pedidos. Servicio pre y post-venta on-line. <br>
+<br> -Reducción de la cadena de distribución, lo que le permite adquirir un producto a un mejor precio. <br>
+<br> -Mayor interactividad y personalización de la demanda. <br>
+<br> -Información inmediata sobre cualquier producto, y disponibilidad de acceder a la información en el momento que así lo requiera. <br>
+<br> -Permite el acceso a más información. <br>
+<br> <center>DESVENTAJAS DEL COMERCIO ELECTRÓNICO</center><br>
+<br> Desconocimiento de la empresa: No conocer la empresa que vende es un riesgo del comercio electrónico, ya que ésta puede estar en otro país o en el mismo, pero en muchos casos las “empresas” o “personas-empresa” que ofrecen sus productos o servicios por Internet ni siquiera están constituidas legalmente en su país y no se trata más que de trata más que de gente que está “probando suerte en gente que está “probando suerte en Internet”.  Internet”. <br>
+<br> Forma de Pago: Aunque ha avanzado mucho el comercio electrónico, todavía no hay una transmisión de dato electrónico, todavía no hay una transmisión de datos segura el 100%. Y esto es un problema pues nadie quiere dar sus datos de la Tarjeta de Crédito por Internet. <br>
+<br> Poder volver (post y pre-venta): Con todo ello podemos reclamar en caso de ser necesario o pedir un servicio “post-venta”. Al conocerlo sabemos dónde poder ir. La venta”. Al conocerlo sabemos dónde poder ir. <br>
+<br> El cliente espera recibir una atención “pre ente espera recibir una atención “pre-venta” o “postventa”. <br>
+<br> <center>GAMA BÁSICA</center><br>
+<br> Este tipo de equipos suelen disponer de 4 GB de RAM, disco duro de 2TB, procesador Intel o AMD A4 con tarjeta gráfica integrada, grabadora de DVD, monitor de 19”, y altavoces, teclado y mouse regulares. Respecto a su uso, estos ordenadores de sobremesa suelen utilizarse para trabajos de oficina, navegar en internet, utilizar el procesador de texto o descargar algunas aplicaciones y películas. <br>
+<br> <center>GAMA MEDIA</center><br>
+<br> Estos equipos suelen incorporar una RAM de 8GB, disco duro de 2TB, procesador Intel i3, tarjeta gráfica tipo NVidia Geforce GTX750, grabadora de DVD, monitor de 19″, y altavoces, teclado y ratón regulares. <br>
+<br><center>¿PARA QUE SE USAN ESE TIPO DE COMPUTADORAS?</center><br>
+<br> Las computadoras de gama media se utilizan para una amplia variedad de tareas, desde trabajos de oficina y navegación web hasta procesamiento de medios y juegos. Son una opción popular para usuarios que necesitan un buen rendimiento sin pagar el precio de una computadora de gama alta. <br>
+<br> Algunos ejemplos de tareas para las que se utilizan las computadoras de gama media son: <br>
+<br> -Procesamiento de textos, hojas de cálculo y presentaciones de diapositivas en un entorno de oficina. <br>
+<br> -Navegación por Internet, correo electrónico y redes sociales. <br>
+<br> -Reproducción y edición de fotos y videos en calidad HD. <br>
+<br> -Juegos en línea y juegos de PC que no requieren una tarjeta gráfica de alta gama. <br>
+<br> -Programas de edición de audio y producción musical. <br>
+<br> -Tareas de programación y desarrollo de software. <br>
+<br> En general, las computadoras de gama media ofrecen un equilibrio entre precio y rendimiento, lo que las hace una opción popular para usuarios que necesitan un buen rendimiento para tareas cotidianas sin tener que pagar el precio de una computadora de gama alta<br>
+<br> <center>GAMA ALTA</center><br>
+<br> Los computadores gama alta brindan un rendimiento mucho mayor a cualquier otro computador, estos PC de mesa tienen procesadores de las últimas generaciones, memorias de 8GB o más, disco sólido y muchas veces tarjetas de video integradas. Por lo tanto, son usados para trabajos pesados como el diseño, video juegos, estudiantes de arquitectura, entre otros. <br>
+<br> Estos equipos tienen las características tales como: <br>
+<br> • Procesador: Intel Core i5, i7, i9; Ryzen 5, 7 o 9(estos rondan en un costo de
+$20,000 a $40,000 pesos) <br>
+<br> • Memoria RAM de 4GB u 8GB. <br>
+<br> • Disco Duro 1TB (1000GB) HDD mecánico o Disco sólido <br>
+<br> • Monitor de 20″ o más tamaño.</p>
+
+      </div>
+</body>
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unidad 4</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+          <img src="TecNMSaltillo.png" alt="Imagen generica">
+          <h2 class="nombre-empresa">Arquitecura de Computadoras</h2>
+          <h2 class="nombre-empresa">Unidad 4</h2>
+        </div>
+        <nav>
+            <a href="index.html" class="nav-link">Inicio</a>
+            <a href="Unidad 1.html" class="nav-link">Unidad 1</a>
+            <a href="Unidad 2.html" class="nav-link">Unidad 2</a>
+            <a href="Unidad 3.html" class="nav-link">Unidad 3</a>
+            <a href="Unidad 4.html" class="nav-link">Unidad 4</a>
+            <a href="Practicas.html" class="nav-link">Practicas</a>
+        </nav>
+      </header>
+      <div class="contenedor">
+        <h1>4.1 Aspectos básicos de la computación paralela</h1>
+        <p><center>¿QUÉ ES LA COMPUTACIÓN PARALELA?</center> <br>
+        <br>La computación paralela es una forma de cómputo en la que hace uso de 2 o más procesadores para resolver una tarea en una sola computadora. La técnica se basa en el principio según el cual, algunas tareas se pueden dividir en partes más pequeñas que pueden ser resueltas simultáneamente. Esta es una forma de computación en la cual varios cálculos pueden realizarse simultáneamente, dividiendo el o los problemas grandes en varios problemas pequeños, que posteriormente se solucionaran en paralelo, esto permite ejecutar más instrucciones en menos tiempo. Las computadoras paralelas pueden clasificarse según el nivel de paralelismo que admite su hardware: equipos con procesadores multinúcleo y multiprocesador que tienen múltiples elementos de procesamiento dentro de una sola máquina y los clústeres, MPPS y grids que utilizan varios equipos para trabajar en la misma tarea. Muchas veces, para acelerar las tareas específicas, se utilizan arquitecturas especializadas de computación en paralelo junto a procesadores tradicionales. Existen varios tipos de computación paralela: paralelismo a nivel de bit, paralelismo a nivel de instrucción, paralelismo de datos y paralelismo de tareas. <br>
+        <br><center>VENTAJAS</center><br>
+        <br>•Resuelve problemas que no se podrían realizar en una sola CPU<br>
+        <br>•Resuelve problemas que no se pueden resolver en un tiempo razonable<br>
+        <br>•Permite ejecutar problemas de un orden y complejidad mayor<br>
+        <br>•Permite ejecutar código de manera más rápida (aceleración) <br>
+        <br>•Permite ejecutar en general más problemas<br>
+        <br>•Obtención de resultados en menos tiempo<br>
+        <br>•Permite la ejecución de varias instrucciones en simultáneo<br>
+        <br>•Permite dividir una tarea en partes independientes<br>
+        <br>•Ofrece mejor balance entre rendimiento y costo que la computación secuencial<br>
+        <br>•Gran expansión y escalabilidad<br>
+        <br><center>DESVENTAJAS</center><br>
+        <br>•Mayor consumo de energía<br>
+        <br>•Mayor dificultad a la hora de escribir programas<br>
+        <br>•Dificultad para lograr una buena sincronización y comunicación entre las tareas<br>
+        <br>•Retardos ocasionados por comunicación ente tareas<br>
+        <br>•Número de componentes usados es directamente proporcional a los fallos potenciales<br>
+        <br>•Altos costos por producción y mantenimiento<br>
+        <br>•Condiciones de carrera<br>
+        <br>•Múltiples procesos se encuentran en condición de carrera si el resultado de los mismos depende del orden de su llegada.<br>
+        <br>•Si los procesos que están en condición de carrera no son correctamente sincronizados, puede producirse una corrupción de datos</p>
+        <h1>4.2 Tipos de comunicación paralela</h1>
+        <h2>4.2.1 Clasificación</h2>
+        <p><center>PARALELISMO A NIVEL DE BIT</center>
+        <br>CONCEPTO: <br>
+        <br>El paralelismo a nivel de bit se refiere a la capacidad de un sistema o procesador para realizar múltiples operaciones en paralelo, de manera simultánea en diferentes bits de un registro o en diferentes bits de múltiples registros. <br>
+        <br>EXPLICACION: <br>
+        <br>Desde el advenimiento de la integración a gran escala (VLSI) como tecnología de fabricación de chips de computadora en la década de 1970 hasta alrededor de 1986, la aceleración en la arquitectura de computadores se lograba en gran medida duplicando el tamaño de la palabra en la computadora, la cantidad de información que el procesador puede manejar por ciclo. El aumento del tamaño de la palabra reduce el número de instrucciones que el procesador debe ejecutar para realizar una operación en variables cuyos tamaños son mayores que la longitud de la palabra. <br>
+        <br>En otras palabras, el paralelismo a nivel de bit se refiere a la habilidad de procesar varias operaciones de manera simultánea, en vez de realizarlas de manera secuencial. Por ejemplo, si se tienen dos números de 8 bits que se deben sumar, un procesador que cuenta con paralelismo a nivel de bit puede realizar la suma en un solo ciclo de reloj, en lugar de realizar la suma bit a bit en ocho ciclos de reloj. <br>
+        <br>Este tipo de paralelismo es comúnmente utilizado en procesadores modernos, ya que permite una mayor velocidad y eficiencia en la ejecución de tareas, especialmente en tareas que requieren procesamiento de grandes cantidades de datos, como en aplicaciones de gráficos, video y procesamiento de señales digitales. <br>
+        <br><center>PARALELISMO A NIVEL DE INSTRUCCIÓN</center><br>
+        <br>Un programa de ordenador es una secuencia de instrucciones ejecutadas por un procesador. <br>
+        <br>Estas instrucciones pueden reordenarse y combinarse en grupos que luego son ejecutadas en paralelo sin cambiar el resultado del programa<br>
+        <br>Los avances en el paralelismo a nivel de instrucción dominaron la arquitectura de computadores desde mediados de 1980 hasta mediados de la década de 1990. <br>
+        <br>• Los procesadores modernos tienen pipeline (tuberías), que permiten segmentar la ejecución de las instrucciones. De este modo, es posible ejecutar diferentes etapas de varias instrucciones al mismo tiempo. <br>
+        <br>Cada etapa en el pipeline corresponde a una acción diferente que el procesador realiza en la instrucción correspondiente a la etapa; un procesador con un pipeline de N etapas puede tener hasta n instrucciones diferentes en diferentes etapas de finalización. Algunos procesadores pueden ejecutar más de una instrucción a la vez. Estos son conocidos como procesadores superes calares. Las instrucciones pueden agruparse juntas sólo si no hay dependencia de datos entre ellas. <br>
+        <br><center>PARALELISMO A NIVEL DE DATOS</center><br>
+        <br>El paralelismo de datos es el paralelismo inherente en programas con ciclos, que se centra en la distribución de los datos entre los diferentes nodos computacionales que deben tratarse en paralelo. La paralización de ciclos conduce a menudo a secuencias similares de operaciones (no necesariamente idénticas) o funciones que se realizan en los elementos de una gran estructura de datos. Muchas de las aplicaciones científicas y de ingeniería muestran paralelismo de datos. Este bucle no se puede paralelizar porque CUR depende de sí mismo (PREV2) y de PREV1, que se calculan en cada iteración del bucle. Dado que cada iteración depende del resultado de la anterior, no se pueden realizar en paralelo. A medida que el tamaño de un problema se hace más grande, la paralización de datos disponible generalmente también lo hace. <br>
+        <br><center>PARALELISMO A NIVEL DE TAREAS</center><br>
+        <br>El paralelismo de tareas es la característica de un programa paralelo en la que cálculos completamente diferentes se pueden realizar en cualquier conjunto igual o diferente de datos. <br>
+        <br>Esto contrasta con el paralelismo de datos, donde se realiza el mismo cálculo en distintos o mismos grupos de datos. El paralelismo de tareas por lo general no escala con el tamaño de un problema. <br>
+        <br>La computación paralela se ha convertido en el paradigma dominante en la arquitectura de computadores, principalmente en los procesadores multinúcleo. <br>
+        <br>Los programas de ordenador paralelos son más difíciles de escribir que los secuenciales porque la concurrencia introduce nuevos tipos de errores de software, siendo las condiciones de carrera los más comunes.</p>
+        <h2>4.2.2 Arquitectura de computadoras secuenciales</h2>
+        <p><center>Arquitectura SISD</center> <br>
+        <br>La arquitectura SISD (Single Instruction Single Data) es un tipo de arquitectura de computadoras en la que una única instrucción es ejecutada en una única unidad de datos en un ciclo de reloj. Esto significa que la computadora solo puede realizar una operación a la vez y solo puede trabajar con un conjunto de datos en un momento dado. <br>
+        <br>En un sistema SISD, la CPU (Unidad Central de Procesamiento) recibe una sola instrucción de un programa y la ejecuta en una sola unidad de datos en un ciclo de reloj. La unidad de datos puede ser un registro de la CPU o una ubicación de memoria, dependiendo de la instrucción que se esté ejecutando. <br>
+        <br>Características importantes<br>
+        <br>• La arquitectura SISD es una de las arquitecturas más simples y antiguas que existen. <br>
+        <br>• Fue utilizada en las primeras computadoras, <br>
+        <br>• Como las máquinas de calcular mecánicas y las primeras computadoras electrónicas.
+        <br>A pesar de ser muy limitada en términos de velocidad y capacidad de procesamiento, la arquitectura SISD todavía se utiliza en sistemas embebidos y en algunos dispositivos de baja potencia, donde la complejidad y el costo del hardware deben ser mínimos. <br>
+        <br><center>Arquitectura MISD</center><br>
+        <br>Un procesador pipeline es un procesador MISD que trabaja de acorde al principio del funcionamiento de un Pipe. <br>
+        <br>La arquitectura Pipeline es la forma fundamental de ejecución paralela de un proceso y es una idea poderosa que puede probar de manera significativa y rendimiento de una computadora SIMD. <br>
+        <br>Hay N secuencias de instrucciones (algoritmos/programas) y una secuencia de datos. El paralelismo es alcanzado dejando que los procesadores realicen. No existen muchos ejemplos de esta arquitectura, ya que MIMD y SIMD son a menudo más apropiados para técnicas comunes de datos paralelos. Específicamente, permiten un mejor escalamiento y uso de recursos computacionales que el MISD. Sin embargo, un ejemplo prominente de MISD en la informática son las computadoras de control de vuelo del transbordador espacial. <br>
+        <br>En un procesador las instrucciones se ejecutan o procesan en ciertos pasos (como las fases de una cadena de montaje). Las etapas del pipeline (su longitud) son esas etapas o pasos por las que pasa una instrucción para ser procesada. <br>
+        <br><center>Arquitectura SIMD</center><br>
+        <br>SIMD por sus siglas en ingles significa: Single instruction multiple data. A los procesadores basados en esta arquitectura, se los conoce como procesadores matriciales. <br>
+        <br>¿QUÉ REALIZA? <br>
+        <br>Permite efectuar varias operaciones de cálculo con una sola instrucción. Esta arquitectura nace debido a la necesidad de aplicar repetidamente una misma operación en grupos datos diferentes como, Muestras contiguas de audio, matrices de vídeo, etc. <br>
+        <br>Cada procesador sigue el mismo conjunto de instrucciones; diferentes elementos de información son asignados a cada procesador. Utilizan memoria distribuida. <br>
+        <br>Típicamente tienen miles procesadores simples. Son utilizadas en redes neuronales. <br>
+        <br>¿PARA QUE SE USA? <br>
+        <br>Las computadoras SIMD tienen una sola unidad de control y múltiples unidades funcionales. <br>
+        <br> La unidad de control se encarga de enviar la misma instrucción a todas las unidades funcionales. Cada unidad funcional trabaja sobre datos diferentes. <br>
+        <br>Estos equipos son de propósito específico, es decir, son apropiados para ciertas aplicaciones particulares, como por ejemplo el procesamiento de imágenes. <br>
+        <br>Los procesadores SIMS se especializan en problemas numéricos que puedan expresarse como matrices o vectores. Cada unidad de procesamiento consta de una ALU y registros, y se utiliza para computar un elemento del resultado (front-end von Neumann, más un array de procesadores idénticos que realizan la misma instrucción). <br>
+        <br><center>Arquitectura MIMD</center><br>
+        <br>Es un sistema con un flujo de múltiples instrucciones que operan sobre múltiples datos. <br>
+        <br>Estos sistemas empezaron a utilizarse a principios de los 80. <br>
+        <br>Se las conoce como múltiples computadoras y multiprocesadores. Se puede decir que MIMD es un súper conjunto de SIMD<br>
+        <br>Algunas características son: <br>
+        <br>• Son sistemas con memoria compartida que permite ejecutar varios procesos simultáneamente (sistema multiprocesador) <br>
+        <br>• La diferencia con estos sistemas es que MIMD es asíncrono. <br>
+        <br>• No tiene un reloj central. <br>
+        <br>Los sistemas MIMD se clasifican en: <br>
+        <br>• Sistemas de Memoria Compartida. <br>
+        <br>En este tipo de sistemas cada procesador tiene acceso a toda la memoria, es decir hay un espacio de direccionamiento compartido. <br>
+        <br>• Sistemas de Memoria Distribuida. <br>
+        <br>Estos sistemas tienen su propia memoria local. Los procesadores pueden compartir información solamente enviando mensajes. <br>
+        <br>• Sistemas de Memoria Compartida Distribuida. <br>
+        <br>Es una partición de procesadores que tienen acceso a una memoria compartida común pero sin un canal compartido. Esto es, físicamente cada procesador posee su memoria local y se interconecta con otros procesadores por medio de un dispositivo de alta velocidad, y todos ven las memorias de cada uno como un espacio de direcciones globales.</p>
+        <h2>4.4.3 Organización de direcciones de memoria</h2>
+        <p>Cuyas siglas significa Multiple Instruction, Multiple Data. <br>
+        <br>Estos sistemas empezaron a utilizarse a principios de los 80. <br>
+        <br>Los sistemas MIMD se clasifican en: <br>
+        <br>- Sistemas de Memoria Compartida. <br>
+        <br>- Sistemas de Memoria Distribuida. <br>
+        <br>- Sistemas de Memoria Compartida Distribuida. <br>
+        <br>-Sistemas de Memoria Compartida. <br>
+        <br>En este tipo de sistemas cada procesador tiene acceso a toda la memoria, es decir hay un espacio de direccionamiento compartido. <br>
+        <br>Las computadoras MIMD con memoria compartida son sistemas conocidos como de multiprocesamiento simétrico (SMP) donde múltiples procesadores comparten un mismo sistema operativo y memoria. <br>
+        <br><center>Sistemas de Memoria Distribuida.</center><br>
+        <br>Estos sistemas tienen su propia memoria local. Los procesadores pueden compartir información solamente enviando mensajes. <br>
+        <br>Las computadoras MIMD de memoria distribuida son conocidas como sistemas de procesamiento en paralelo masivo (MPP) donde múltiples procesadores trabajan en diferentes partes de un programa, usando su propio sistema operativo y memoria<br>
+        <br><center>Sistemas de Memoria Compartida Distribuida</center><br>
+        <br>Es una partición de procesadores que tienen acceso a una memoria compartida común pero sin un canal compartido. Esto es, físicamente cada procesador posee su memoria local y se interconecta con otros procesadores por medio de un dispositivo de alta velocidad, y todos ven las memorias de cada uno como un espacio de direcciones globales.</p>
+        <h1>4.3 Sistemas de memoria (Compartida)</h1>
+        <p><center>Multiprocesadores</center> <br>
+        <br>Un multiprocesador puede verse como un computador paralelo compuesto por varios procesadores interconectados que comparten un mismo sistema de memoria. <br>
+        <br>Dado que los multiprocesadores comparten diferentes módulos de memoria, pudiendo acceder a un mismo módulo varios procesadores, a los multiprocesadores también se les llama sistemas de memoria compartida.</p>
+        <h2>4.3.1 Redes de interconexión  dinámica (directa o indirecta)</h2>
+        <p>Uno de los criterios más importantes para la clasificación de las redes es el que tiene en cuenta la situación de la red en la máquina paralela, dando lugar a dos familias de redes: redes estáticas y redes dinámicas. Una red estática es una red cuya topología queda definida de manera definitiva y estable durante la construcción de la máquina paralela. <br>
+        <br>La red simplemente une los diversos elementos de acuerdo a una configuración dada. Se utiliza sobre todo en el caso de los multicomputadores para conectar los diversos procesadores que posee la máquina. Por la red sólo circulan los mensajes entre procesadores, por lo que se dice que la red presenta un acoplamiento débil. En general, en las redes estáticas se exige poca carga a la red. <br>
+        <br>Una red dinámica es una red cuya topología puede variar durante el curso de la ejecución de un programa paralelo o entre dos ejecuciones de programas. La red está constituida por elementos materiales específicos, llamados conmutadores o switches. <br>
+        <br>Las redes dinámicas se utilizan sobre todo en los multiprocesadores. En este caso, la red une los procesadores a los bancos de memoria central. <br>
+        <br>Cualquier acceso de un procesador a la memoria (bien sea para acceder a los datos o a las instrucciones) debe pasar a través de la red, por lo se dice que la red tiene un acoplamiento fuerte. La red debe poseer un rendimiento extremadamente bueno para no demorar demasiado a los procesadores que acceden a memoria.</p>
+        <h2>4.3.1.1 Redes De Medio Compartido</h2>
+        <p>Las redes de medio compartido son aquellas en las que varios dispositivos comparten un mismo medio físico de comunicación, como un cable o un canal de radiofrecuencia. En este tipo de redes, los dispositivos transmiten y reciben datos a través del mismo medio compartido, lo que puede dar lugar a conflictos y colisiones cuando dos o más dispositivos intentan transmitir datos al mismo tiempo. <br>
+        <br>Un ejemplo de red de medio compartido es Ethernet<br>
+        <br>Una tecnología de red ampliamente utilizada en redes de área local (LAN) donde todos los dispositivos están conectados a un mismo cable de cobre o fibra óptica. En una red Ethernet, cada dispositivo transmite y recibe datos a través del mismo cable, utilizando un protocolo llamado CSMA/CD (Acceso Múltiple por Detección de Portadora con Detección de Colisiones), que ayuda a evitar las colisiones de datos.</p>
+        <h2>4.3.1.2 Redes Conmutadas</h2>
+        <p>Cuando se va a enviar datos a largas distancias (e incluso a no tan largas), este debe pasar por varios nodos intermedios. Los cuáles son los encargados de dirigir los datos para que lleguen a su destino. Por lo cual se hace uso de lo que es una red conmutada. Ya que estas consisten en un conjunto de nodos interconectados entre sí, a través de medios de transmisión, donde la información se traslada encaminándola del nodo de origen al nodo destino mediante conmutación entre nodos intermedios. <br>
+        <br>Una transmisión de este tipo tiene 3 fases: <br>
+        <br>-Establecimiento de la conexión. <br>
+        <br>-Transferencia de la información. <br>
+        <br>-Liberación de la conexión. <br>
+        <br>Así mismo podemos decir que Se entiende por conmutación en un nodo, a la conexión física o lógica, de un camino de entrada al nodo con un camino de salida del nodo, con el fin de transferir la información.</p>
+        <h2>4.4 Sistemas de memoria distribuida</h2>
+        <p>CONCEPTO SISTEMA DE MEMORIA DISTRIBUIDA:
+        <br> Los sistemas de memoria distribuida son sistemas informáticos en los que múltiples computadoras independientes se comunican y colaboran entre sí para realizar tareas. En estos sistemas, cada computadora tiene su propia memoria local y puede acceder a la memoria de las demás computadoras en la red. De esta manera, los sistemas de memoria distribuida pueden proporcionar una gran capacidad de procesamiento y almacenamiento, así como una mayor tolerancia a fallos. <br>
+        <br> <center>MULTICOMPUTADORES</center><br>
+        <br> Sobre los sistemas de multicomputadores de memoria distribuida, se simula memorias compartidas. Se usan los mecanismos de comunicación y sincronización de sistemas multiprocesadores. <br>
+        <br> Una red de ordenadores, especialmente si disponen de una interconexión de alta velocidad, puede ser vista como un multicomputador de memoria distribuida y como tal ser utilizada para resolver problemas mediante computación paralela. <br>
+        <br> Los sistemas de memoria distribuida o multicomputadores pueden ser de dos tipos básicos: <br>
+        <br> 1.- Consta de un único computador con múltiples CPUs comunicadas por un bus de datos. <br>
+        <br> 2.- Se utilizan múltiples computadores, cada uno con su propio procesador, enlazados por una red de interconexión más o menos rápida.</p>
+        <h2>4.4.1 Redes de interconexión (estática)</h2>
+        <p>Las redes estáticas emplean enlaces directos fijos entre los nodos. Estos enlaces, una vez fabricado el sistema son difíciles de cambiar, por lo que la escalabilidad de estas topologías es baja. Las redes estáticas pueden utilizarse con eficiencia en los sistemas en que pueden predecirse el tipo de tráfico de comunicaciones entre sus procesadores. <br>
+        <br>Clases de redes de interconexión: <br>
+        <br>• Formación lineal: Se trata de una red unidimensional en que los nodos se conectan cada uno con el siguiente medianteN-1 enlaces formando una línea. <br>
+        <br>• Mallas y toros: Esta red de interconexión es muy utilizada en la práctica. Las redes en toro son mallas en que sus filas y columnas tienen conexiones en anillo, esto contribuye a disminuir su diámetro. Esta pequeña modificación permite convertir a las mallas en estructuras simétricas y además reduce su diámetro a la mitad. <br>
+        <br><center>Cluster</center><br>
+        <br>Es un grupo de ordenadores débilmente acoplados que trabajan en estrecha colaboración, de modo que en algunos aspectos pueden considerarse como un solo equipo. Los clústeres se componen de varias máquinas independientes conectadas por una red. Mientras que las máquinas de un clúster no tienen que ser simétricas. <br>
+        <br>El tipo más común de clúster es el cluster Beowulf, que es un clúster implementado con múltiples ordenadores comerciales idénticos conectados a una red de área local TCP/IPEthernet. La tecnología Beowulf fue desarrollada originalmente por Thomas Sterling y Donald Becker. <br>
+        <br>Los clúster son usualmente empleados para mejorar el rendimiento y la disponibilidad por encima de la que es provista por un solo computador típicamente siendo más económico que computadores individuales de rapidez y disponibilidad comparables. <br>
+        <br><center>Programación de Cluster</center><br>
+        <br>Estos clúster están diseñados y optimizados para correr programas paralelos. En este caso, los programas tienen que ser hechos específicamente para funcionar en forma paralela. <br>
+        <br>Cuando se programa un modelo en una plataforma multiprocesadores es necesario usar esquemas de programación paralela. Las bibliotecas son las que permiten paralización de tareas. En el caso de los clúster SCALI, portar programas hechos con bibliotecas MPI es directo gracias al uso de biblioteca SCAMPI. <br>
+        <br><center>Consideraciones sobre rendimiento de Cluster</center><br>
+        <br>Para diseñar, implementar, probar y mantener un clúster se requiere un entendimiento básico pero claro de hardware de computadoras, de redes de computadoras y de sistemas operativos y la habilidad para investigar algunos tópicos especializados, como dispositivos de interconexión de Alta velocidad, tal vez reintroducirse a lenguajes de programación como FORTRAN y librerías para el desarrollo de aplicaciones como MPI. <br>
+        <br>Una vez escogido un sistema operativo, dígase Linux, se requiere algo de experiencia en la administración de sistemas Linux y en la forma de realizar conexiones de red. De manera lógica, cada nodo del clúster tiene una parte de hardware y otra de software. El hardware está compuesto por procesadores, memoria, interfaz de red y discos duros entre otros.</p>
+                                                        
+      </div>
+</body>
+</html>
